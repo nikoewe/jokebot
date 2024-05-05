@@ -9,8 +9,15 @@ export async function POST(REQUEST){
     let json = await raw.json()
     let res = await json
     console.log(json)
-    return NextResponse.json({
-        type: 'text',
-        texts: [res.delivery],
-        context: json})
+    return NextResponse.json(
+        {
+        responses: [{
+            type: 'text',
+            texts: [res.setup],
+        }],
+        context: json
+        }
+            
+        )
+        
 }
