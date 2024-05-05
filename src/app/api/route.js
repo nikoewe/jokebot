@@ -8,7 +8,7 @@ export async function POST(req){
     let raw = await fetch('https://v2.jokeapi.dev/joke/any')
     let json = await raw.json()
     let res = await json
-    console.log(json)
+    console.log(req)
     return NextResponse.json(
         {
         responses: [{
