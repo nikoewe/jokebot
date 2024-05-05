@@ -12,9 +12,9 @@ export async function POST(req){
     console.log(req)
 
     let jokeText = {
-        type: json.type,
-        line1: json.type === 'single' ? json.joke : json.setup,
-        line2: json.type === 'twopart' ? json.delivery : ''
+        type: res.type,
+        line1: res.type === 'single' ? res.joke : res.setup,
+        line2: res.type === 'twopart' ? res.delivery : ''
     }
 
     return NextResponse.json(
