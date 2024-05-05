@@ -25,7 +25,7 @@ export async function POST(req){
             texts: [jokeText.line1],
         }],
         context: {
-            typeOfJoke: jokeText.type,
+            type: jokeText.type,
             line2: jokeText.line2
 
         }
