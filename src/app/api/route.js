@@ -5,17 +5,30 @@ export async function POST(req){
     req = await req.json()
 
     let category = req.context['4ent']
-    let raw = await fetch(`https://v2.jokeapi.dev/joke/${category}?type=single`)
+    let raw = await fetch(`https://v2.jokeapi.dev/joke/${category}`)
     let json = await raw.json()
     let res = await json
+
     console.log(req)
+
+    let jokeText = {
+        type: json.type,
+        line1: json.type === 'single' ? json.joke : json.setup,
+        line2: json.delivery
+    }
+
     return NextResponse.json(
         {
-        responses: [{
+        responses: [
+            {
             type: 'text',
-            texts: [res.setup],
+            texts: [jokeText.line1],
         }],
-        context: json
+        context: {
+            typeOfJoke: jokeText.type,
+            line2: jokeText.line2
+
+        }
         }
             
         )
