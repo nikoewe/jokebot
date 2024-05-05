@@ -14,7 +14,7 @@ export async function POST(req){
     let jokeText = {
         type: json.type,
         line1: json.type === 'single' ? json.joke : json.setup,
-        line2: json.delivery
+        line2: json.type === 'twopart' ? json.delivery : ''
     }
 
     return NextResponse.json(
