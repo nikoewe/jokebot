@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 
-export async function POST(REQUEST){
-    const req = await REQUEST.json()
+export async function POST(req){
+    req = await req.json()
 
     
     let raw = await fetch('https://v2.jokeapi.dev/joke/any')
