@@ -17,7 +17,20 @@
     background-image: url('../bmo.png');
     height: 100vh;
     width: 59.29vh;
-    background-size: cover;
+    background-size:contain;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 768px){
+    .background{
+        width: 100vw;
+    }
+
+    .screen{
+        top: 22.7vw;
+        height: 110vw;
+        width: 74vw;
+    }
 }
