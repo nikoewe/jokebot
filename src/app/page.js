@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import chatBoxLoader from "./utils/chatBoxLoader"
+import Arcade from "./components/Arcade"
 
 
 export default function Home() {
@@ -14,10 +15,8 @@ export default function Home() {
   },[])
 
   return (
-    <main>
-      Hello world
-      
-
+    <main className="container">
+      <Arcade/>
     </main>
   )
 }
