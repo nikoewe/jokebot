@@ -5,7 +5,19 @@
     width: 100%;
 }
 .screen{
-    height: 21vw;
-    width: 28vw;
+    top: 14.1vh;
+    height: 65vh;
+    width: 43.9vh;
+    position: absolute;
+    z-index: 10;
     
+}
+
+.background {
+    background-image: url('../bmo.png');
+    height: 100vh;
+    width: 59.29vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
 }
