@@ -1,0 +1,289 @@
+{
+  "dialog_id": "0b2b1833-7d8e-4a35-85c3-dbea048d5c55",
+  "brain_id": "14f36719-ab57-4ea3-b958-1d7be2fa8d64",
+  "name": "JokeManager",
+  "collection": "",
+  "description": "",
+  "nodes": [
+    {
+      "name": "JokeManager",
+      "type": "intent",
+      "intent": "joke",
+      "actions": [],
+      "node_id": "3c2758f1-5aa7-46a8-b90f-64b487c17041",
+      "conditions": [
+        {
+          "name": "Match the categories",
+          "match": "any",
+          "rules": [
+            {
+              "name": "$category",
+              "value": "Spooky",
+              "rule_id": "65acb3b2-6503-42a5-9193-d7ede806e290",
+              "operator": "equal"
+            },
+            {
+              "name": "$category",
+              "value": "Dark",
+              "rule_id": "50e2fe42-6858-4058-a90a-d60ed696d4b5",
+              "operator": "equal"
+            },
+            {
+              "name": "$category",
+              "value": "Programming",
+              "rule_id": "121d2942-b9d4-4a00-a6ec-af85302e0918",
+              "operator": "equal"
+            },
+            {
+              "name": "$category",
+              "value": "Pun",
+              "rule_id": "f31d339c-2266-4ae1-98b4-6e0976fd05b7",
+              "operator": "equal"
+            },
+            {
+              "name": "$category",
+              "value": "Any",
+              "rule_id": "faf9f655-5d66-4115-8935-8df7ba67566a",
+              "operator": "equal"
+            }
+          ],
+          "actions": [
+            {
+              "name": "Name jkum",
+              "type": "event",
+              "action_id": "09ac94f6-c60c-4461-b397-a7e5852c344d",
+              "trigger_node_id": "19573588-4f40-4d78-928f-4bc2eb92da49"
+            }
+          ],
+          "condition_id": "0b613cf6-6447-4fd9-8b47-f1663d50d9ee"
+        },
+        {
+          "name": "Condition byu3",
+          "match": "else",
+          "rules": [],
+          "actions": [
+            {
+              "type": "text",
+              "texts": [
+                "I&#39;m sorry bro, I didn&#39;t get it but here you have one anyway"
+              ],
+              "action_id": "82bc5c69-44de-444f-bf69-1f565500f6b1"
+            },
+            {
+              "type": "set_variables",
+              "action_id": "0e0cd2b4-2a3d-48ae-ac41-57327dfbbaf8",
+              "variables": [
+                {
+                  "value": "Any",
+                  "variable": "category"
+                }
+              ]
+            },
+            {
+              "type": "pause",
+              "duration": 2,
+              "action_id": "98ae6bc1-2fcc-41c7-bd20-e50fcc3deae2",
+              "show_typing": true
+            },
+            {
+              "name": "Name p84a",
+              "type": "event",
+              "action_id": "3232e70a-e379-42bb-ad98-346256be2beb",
+              "trigger_node_id": "19573588-4f40-4d78-928f-4bc2eb92da49"
+            }
+          ],
+          "condition_id": "80da6740-6f48-4c13-8f28-3a309cc4215c"
+        }
+      ],
+      "requisites": [
+        {
+          "actions": [
+            {
+              "type": "text",
+              "texts": [
+                "Alright here we go. But first tell me which topic you&#39;d like 😉"
+              ],
+              "options": [
+                {
+                  "text": "Dark",
+                  "label": "Dark",
+                  "option_id": "95320a07-fba6-42b2-ae9c-5878f8fd18d1"
+                },
+                {
+                  "text": "Programming",
+                  "label": "Programming",
+                  "option_id": "1e120555-69c3-45b9-98ba-70f5548f1eda"
+                },
+                {
+                  "text": "Pun",
+                  "label": "Pun",
+                  "option_id": "fbccc976-7015-4f80-8833-e0eb49a96f5c"
+                },
+                {
+                  "text": "Spooky",
+                  "label": "Spooky",
+                  "option_id": "b2e18748-e65c-4006-a758-e5bf0453d10b"
+                },
+                {
+                  "text": "Any",
+                  "label": "Any",
+                  "option_id": "a1669036-9d89-4b43-a1ff-9934741b6d88"
+                }
+              ],
+              "action_id": "02b0e645-4481-458d-bd30-d21a32378fdf"
+            }
+          ],
+          "save_as": "category",
+          "requisite_id": "690d871d-c44d-45ef-b743-6288a1c14ba0"
+        }
+      ],
+      "disambiguation": false
+    },
+    {
+      "name": "start joke",
+      "type": "event",
+      "actions": [
+        {
+          "type": "webhook",
+          "fallback": [],
+          "action_id": "7cd80ab2-53cf-470b-b5f4-3f43615da067",
+          "webhook_id": "51760de2-eef3-4b5b-bcd9-0334058463e7"
+        }
+      ],
+      "node_id": "19573588-4f40-4d78-928f-4bc2eb92da49",
+      "parent_id": "3c2758f1-5aa7-46a8-b90f-64b487c17041",
+      "conditions": [
+        {
+          "name": "twopart",
+          "match": "any",
+          "rules": [
+            {
+              "name": "$type",
+              "value": "twopart",
+              "rule_id": "24eaa99b-eceb-4d96-aed6-c2163df214f0",
+              "operator": "equal"
+            }
+          ],
+          "actions": [
+            {
+              "type": "pause",
+              "duration": 3,
+              "action_id": "2afc4a4c-2ea6-4cf0-bc8d-fc932535076d",
+              "show_typing": true
+            },
+            {
+              "type": "text",
+              "texts": [
+                "{{$line2}}"
+              ],
+              "action_id": "c7ca3b5a-c736-4b8d-9597-a951c7834bbe"
+            },
+            {
+              "name": "Name 2mr3",
+              "type": "event",
+              "action_id": "6a6d8bfe-5ea1-45a3-a30e-fc3abdf91539",
+              "trigger_node_id": "465993ec-2ef3-4d08-99a0-3d5fc5429ec3"
+            }
+          ],
+          "condition_id": "55b7e1f3-55f3-4ea0-9ae6-031e9cb38579"
+        },
+        {
+          "name": "Condition boti",
+          "match": "else",
+          "rules": [],
+          "actions": [
+            {
+              "name": "Name 2pqd",
+              "type": "event",
+              "action_id": "d8417853-7d2f-4b1c-97aa-f5cb06c8550c",
+              "trigger_node_id": "465993ec-2ef3-4d08-99a0-3d5fc5429ec3"
+            }
+          ],
+          "condition_id": "1046c270-e1f7-4e8a-9f8b-2a10308d1813"
+        }
+      ],
+      "requisites": []
+    },
+    {
+      "name": "more jokes",
+      "type": "event",
+      "actions": [],
+      "node_id": "465993ec-2ef3-4d08-99a0-3d5fc5429ec3",
+      "parent_id": "19573588-4f40-4d78-928f-4bc2eb92da49",
+      "conditions": [
+        {
+          "name": "Condition s9u6",
+          "match": "any",
+          "rules": [
+            {
+              "name": "$oneMore",
+              "value": "yeah",
+              "rule_id": "cc9226a3-b5d4-4240-8c47-6200b8e9b194",
+              "operator": "equal"
+            }
+          ],
+          "actions": [
+            {
+              "name": "Name ujix",
+              "type": "reset",
+              "action_id": "24fafb71-32f5-447d-b1d6-d69869f6d433",
+              "variables": [
+                "oneMore"
+              ]
+            },
+            {
+              "name": "Name 5ygn",
+              "type": "event",
+              "action_id": "c49378b3-5cd1-4f60-a27f-497ef410b0bf",
+              "trigger_node_id": "19573588-4f40-4d78-928f-4bc2eb92da49"
+            }
+          ],
+          "condition_id": "f152bf1c-0cd1-4036-bca0-5970f293dd42"
+        },
+        {
+          "name": "Condition cvyf",
+          "match": "else",
+          "rules": [],
+          "actions": [
+            {
+              "name": "Name tvql",
+              "type": "event",
+              "action_id": "c9fce5a0-c05d-4104-b1dc-c3818d73e895",
+              "trigger_node_id": "ebda3890-c832-4191-936d-a34ed360dafb"
+            }
+          ],
+          "condition_id": "fde49e03-db2b-4b8b-971a-9c54df8ac2f0"
+        }
+      ],
+      "requisites": [
+        {
+          "actions": [
+            {
+              "type": "text",
+              "texts": [
+                "one more?"
+              ],
+              "options": [
+                {
+                  "text": "yeah",
+                  "label": "Sure",
+                  "option_id": "6560702f-90a9-4bea-aa76-b95d3640b8d6"
+                },
+                {
+                  "text": "no",
+                  "label": "No please",
+                  "option_id": "a8d3ba24-7d9c-4832-a231-0142c9e99df7"
+                }
+              ],
+              "action_id": "c0982b3b-2328-4627-95e0-8bae893d76a3"
+            }
+          ],
+          "save_as": "oneMore",
+          "requisite_id": "64139653-f839-4bea-a7f9-093c567577c7"
+        }
+      ]
+    }
+  ],
+  "created": "2024-05-05T07:01:34.709Z",
+  "updated": "2024-05-07T18:19:29.966Z"
+}
