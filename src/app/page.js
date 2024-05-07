@@ -9,7 +9,8 @@ import Arcade from "./components/Arcade"
 export default function Home() {
 
   
-
+//Load the chatbox from a function an a separate file in case
+//it is needed in another page.
   useEffect(()=>{
     chatBoxLoader()
   },[])
