@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    width: 80%;
 }
 .screen{
-    top: 14.1vh;
+    top: 14vh;
     height: 65vh;
     width: 43.9vh;
     position: absolute;
