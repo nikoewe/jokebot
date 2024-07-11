@@ -1,10 +1,13 @@
-import './arcade.css'
-import bmo from '../bmo.png'
-export default function Arcade({...props}){
+"use client";
+import "./arcade.css";
+import Image from "next/image";
 
-    return(
-        <div className='background'>
-            <div className='screen' id='embed'></div>
-        </div>
-    )
+export default function Arcade({ ...props }) {
+  return (
+    <div className="container">
+      <div className="background">
+        <div className="screen" id="embed"></div>
+      </div>
+    </div>
+  );
 }

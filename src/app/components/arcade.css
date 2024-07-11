@@ -5,17 +5,17 @@
   width: 100%;
 }
 .screen {
-  top: 14.1vh;
-  height: 65vh;
-  width: 43.9vh;
+  top: 15vh;
+  height: 71vh;
+  width: 47.5vh;
   position: absolute;
   z-index: 10;
 }
 
 .background {
-  background-image: url("../bmo.png");
+  background-image: url("../assets/BMO.svg");
   height: 100vh;
-  width: 59.29vh;
+  width: 55vh;
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
@@ -28,8 +28,8 @@
   }
 
   .screen {
-    top: 22.7vw;
-    height: 110vw;
-    width: 74.3vw;
+    top: 27.5vw;
+    height: 128vw;
+    width: 90vw;
   }
 }
